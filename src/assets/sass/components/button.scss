@@ -1,0 +1,38 @@
+.cta_btn {
+  @include fontFace(22px, 1.2, 500, $color-white);
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: var(--feat-color);
+  padding: 6px 30px;
+  position: relative;
+  display: block;
+  width: max-content;
+  overflow: hidden;
+  &::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 200%;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%) rotate(20deg) translateX(-25px);
+    background-color: rgba($color: #fff, $alpha: 0.7);
+    transition: 0.4s all ease-in-out;
+  }
+  &:hover {
+    color: $color-white;
+    @include above($tablet-lg) {
+      &::after {
+        animation: reflect 0.3s linear forwards;
+        @keyframes reflect {
+          0% {
+            left: 0;
+          }
+          100% {
+            left: calc(100% + 35px);
+          }
+        }
+      }
+    }
+  }
+}

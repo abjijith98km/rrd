@@ -1,0 +1,60 @@
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  padding: 5px 0;
+  .header_inner_wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .logo_wrap {
+      display: block;
+      width: 50px;
+      height: 50px;
+      transition: 0.5s all ease-in-out;
+      position: relative;
+      transform: translateX(150px);
+      img {
+        transition: 0.5s all ease-in-out;
+        opacity: 0;
+        visibility: hidden;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        width: 50vw;
+        height: 9px;
+        display: block;
+        background-color: $color-white;
+        top: 50%;
+        right: calc(100% + 10px);
+        transform: translateY(-50%);
+      }
+    }
+    nav {
+      ul {
+        display: flex;
+        align-items: center;
+        li {
+          &+li{
+            margin-left: 40px;
+          }
+          a {
+            @include fontFace(16px, 1.2, 400, $color-white);
+            transition: 0.3s all ease-in-out;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            &:hover {
+              @include above($tablet-lg) {
+                color: var(--feat-color);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
