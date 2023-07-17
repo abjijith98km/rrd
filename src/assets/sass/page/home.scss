@@ -4,11 +4,15 @@
   overflow: hidden;
   .banner_inner_wrap {
     h1 {
-      @include fontFace(240px, 1.2, 400, $color-white);
+      @include fontFace(240px, 1, 400, $color-white);
       text-transform: uppercase;
+      @include below($desktop-lg) {
+        font-size: 190px;
+      }
       .transform_wrap {
         overflow: hidden;
         display: block;
+        margin-bottom: 50px;
         span {
           display: block;
           transition: 1s all ease-in-out;
@@ -22,10 +26,24 @@
     }
     .banner_desc {
       position: relative;
-      .banner_desc_wrap{
-        transform: translateY(100px);
-        opacity: 0;
+      .banner_desc_wrap {
         transition: 1s all ease-in-out;
+        overflow: hidden;
+        h3 {
+          transform: translateY(100px);
+          opacity: 0;
+          @include fontFace(25px, 1.5, 400, $color-white);
+          margin-bottom: 40px;
+          transition: 1s all ease-in-out;
+          @include below($desktop-lg) {
+            font-size: 20px;
+          }
+        }
+        .cta_btn {
+          transform: translateY(100px);
+          opacity: 0;
+          transition: 1s all ease-in-out;
+        }
       }
       &::after {
         content: "";
@@ -35,12 +53,6 @@
         width: calc(100% + 60%);
         display: block;
         border-bottom: 9px solid $color-white;
-      }
-      .banner_desc_wrap {
-        h3 {
-          @include fontFace(25px, 1.5, 400, $color-white);
-          margin-bottom: 40px;
-        }
       }
     }
   }
@@ -54,6 +66,9 @@
       @include fontFace(190px, 1, 500, rgba($color: #fff, $alpha: 0.05));
       width: min-content;
       text-align: right;
+      @include below($desktop-lg) {
+        font-size: 165px;
+      }
     }
     .about_featured_image {
       width: 60%;
@@ -70,17 +85,20 @@
           transition: all 1s ease-out;
           object-fit: cover;
           transform: scale(1.4);
-          &.is-inview {
-            transform: scale(1);
-          }
+          // &.is-inview {
+          //   transform: scale(1);
+          // }
         }
       }
     }
     .desc_wrap {
       margin-bottom: 50px;
       h4 {
-        @include fontFace(25, 2, 300, $color-white);
+        @include fontFace(25px, 1.7, 300, $color-white);
         margin-bottom: 30px;
+        @include below($desktop-lg){
+          font-size: 20px;
+        }
       }
     }
   }
@@ -232,8 +250,11 @@
   figure {
     width: 50%;
     flex: 0 0 50%;
+    overflow: hidden;
     img {
       object-fit: cover;
+      transform: scale(1.3);
+      transition: 0.4s all ease-out;
     }
   }
   .content_wrap {
@@ -325,6 +346,18 @@
     @include fontFace(230px, 1.2, 400, $color-white);
     text-transform: uppercase;
     margin-bottom: 30px;
+    position: relative;
+    @include below($desktop-lg) {
+      font-size: 210px;
+    }
+    img {
+      width: 30%;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: -1;
+      height: auto;
+    }
     @include below($desktop-lg) {
       font-size: 145px;
     }
@@ -388,7 +421,7 @@
     .our_wok_slider_innerwrap {
       display: flex;
       align-items: flex-start;
-      margin-left: 30vw;
+      padding-left: 30vw;
       .work_card {
         width: 400px;
         flex: 0 0 400px;
@@ -470,9 +503,15 @@
   h3 {
     @include fontFace(130px, 1, 400, $color-white);
     margin-bottom: 30px;
+    @include below($desktop-lg){
+      font-size: 100px;
+    }
   }
   h4 {
     @include fontFace(35px, 1.2, 300, $color-white);
+    @include below($desktop-lg){
+      font-size: 30px;
+    }
   }
   .contact_form_wrap {
     padding-top: 50px;

@@ -49,4 +49,8 @@ $(document).ready(function () {
     draggable: false,
     rtl:true
   });
+  Fancybox.bind("[data-fancybox]", {
+    // Your custom options
+  });
+  $('.our_works_section .container_wrapper').css({'padding-bottom':`${($('.our_works_section .our_work_scroller .our_wok_slider_innerwrap .work_card').length * 300)+'px'}`})
 });

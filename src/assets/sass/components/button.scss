@@ -8,6 +8,9 @@
   display: block;
   width: max-content;
   overflow: hidden;
+  @include below($desktop-lg){
+    font-size: 20px;
+  }
   &::after {
     content: "";
     position: absolute;

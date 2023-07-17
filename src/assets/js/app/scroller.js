@@ -8,6 +8,16 @@ if (window.screen.width > 1200) {
   });
   // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
   locoScroll.on("scroll", ScrollTrigger.update);
+  locoScroll.on(
+    "scroll",
+    (func = (scroll) => {
+      if (scroll.scroll.y > window.screen.height) {
+        $("body").addClass("stickyheader");
+      } else {
+        $("body").removeClass("stickyheader");
+      }
+    })
+  );
 
   // tell ScrollTrigger to use these proxy methods for the "[data-scroll-container]" element since Locomotive Scroll is hijacking things
   ScrollTrigger.scrollerProxy("[data-scroll-container]", {
@@ -41,37 +51,96 @@ if (window.screen.width > 1200) {
       scrollTrigger: {
         trigger: $(this),
         start: "0% 80%",
-        end: "100% 80%",
+        end: "100% 60%",
         scroller: "[data-scroll-container]",
         scrub: true,
       },
     });
   });
-  gsap.from('.full_width_banner .inner_wrap',{
+  gsap.from(".full_width_banner .inner_wrap", {
     backgroundSize: "200%",
     scrollTrigger: {
-      trigger: '.full_width_banner .inner_wrap',
+      trigger: ".full_width_banner .inner_wrap",
       start: "0% 100%",
       end: "100% 0%",
       scroller: "[data-scroll-container]",
       scrub: true,
       // pin:true,
     },
-  })
-  gsap.to('.hero_banner .banner_inner_wrap h1 .transform_wrap span',{
-    y: "0%",
-    stagger:.3,
+  });
+  gsap.to(".about_intro .introduction .about_featured_image figure img", {
+    scale: 1,
     scrollTrigger: {
-      trigger: '.hero_banner .banner_inner_wrap h1 .transform_wrap span',
+      trigger: ".about_intro .introduction .about_featured_image figure img",
+      start: "0% 100%",
+      end: "100% 0%",
+      scroller: "[data-scroll-container]",
+      scrub: true,
+      // pin:true,
     },
-  })
-  // gsap.to('.hero_banner .banner_inner_wrap h1 .transform_wrap span',{
-  //   y: "0%",
-  //   stagger:.3,
-  //   scrollTrigger: {
-  //     trigger: '.hero_banner .banner_inner_wrap h1 .transform_wrap span',
-  //   },
-  // })
+  });
+  gsap.to(".service_card figure img", {
+    scale: 1,
+    scrollTrigger: {
+      trigger: ".service_card figure img",
+      start: "0% 100%",
+      end: "50% 0%",
+      scroller: "[data-scroll-container]",
+      scrub: true,
+      // pin:true,
+    },
+  });
+  let cardsLength = $(
+      ".our_works_section .our_work_scroller .our_wok_slider_innerwrap .work_card"
+    ).length,
+    multiplier = 300;
+  let totalSCroll = cardsLength * multiplier;
+
+  gsap.to(".our_works_section .our_work_scroller .our_wok_slider_innerwrap", {
+    x: -totalSCroll,
+    scrollTrigger: {
+      trigger:
+        ".our_works_section .our_work_scroller .our_wok_slider_innerwrap",
+      start: "50% 50%",
+      // ease: Bounce.easeOut,
+      end: `+=${totalSCroll}`,
+      scroller: "[data-scroll-container]",
+      scrub: true,
+      // pin:true,
+    },
+  });
+  gsap.to(".hero_banner .banner_inner_wrap h1 .transform_wrap span", {
+    y: "0%",
+    duration: 1,
+    stagger: 0.2,
+    scrollTrigger: {
+      trigger: ".hero_banner .banner_inner_wrap h1 .transform_wrap span",
+    },
+  });
+
+  gsap.to(".hero_banner .banner_inner_wrap .banner_desc .banner_desc_wrap h3", {
+    y: "0%",
+    opacity: 1,
+    delay: 1.2,
+    // stagger:.3,
+    scrollTrigger: {
+      trigger:
+        ".hero_banner .banner_inner_wrap .banner_desc .banner_desc_wrap h3 ",
+    },
+  });
+  gsap.to(
+    ".hero_banner .banner_inner_wrap .banner_desc .banner_desc_wrap .cta_btn",
+    {
+      y: "0%",
+      opacity: 1,
+      delay: 1.5,
+      // stagger:.3,
+      scrollTrigger: {
+        trigger:
+          ".hero_banner .banner_inner_wrap .banner_desc .banner_desc_wrap .cta_btn ",
+      },
+    }
+  );
 
   $('form input[type="submit"]').click(function () {
     setTimeout(() => {
