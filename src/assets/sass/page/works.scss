@@ -1,0 +1,83 @@
+.all_our_works {
+  width: 100%;
+  max-width: 100vw;
+  padding: 120px 0;
+  .title_primary {
+    margin-bottom: 15px;
+    &::first-letter {
+      color: var(--feat-color);
+    }
+  }
+  h5 {
+    @include fontFace(25px, 1.4, 300, $color-white);
+    max-width: 60%;
+  }
+  .our_works_row {
+    margin-top: 70px;
+    & > div {
+      margin-bottom: 30px;
+    }
+    .work_card_item {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1/1;
+      overflow: hidden;
+      display: block;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        background-color: rgba($color: #000000, $alpha: 0.6);
+        transition: 0.4s all ease-in-out;
+        opacity: 0;
+        @include below($tablet-lg) {
+          background-color: transparent;
+          background: linear-gradient(
+            to bottom,
+            rgba($color: $color-black, $alpha: 0) 0,
+            rgba($color: $color-black, $alpha: 0.3) 70%,
+            rgba($color: $color-black, $alpha: 1) 100%
+          );
+          opacity: 1;
+        }
+      }
+      h2 {
+        @include fontFace(30px, 1.2, 400, $color-white);
+        position: absolute;
+        bottom: 15px;
+        left: 15px;
+        transition: 0.4s all ease-in-out;
+        opacity: 0;
+        transform: translateY(40px);
+        z-index: 5;
+        @include below($tablet-lg) {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        @include below($mobile-lg) {
+          font-size: 20px;
+        }
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: 0.4s all ease-in-out;
+      }
+      &:hover {
+        @include above($tablet-lg) {
+          h2 {
+            transform: translateY(0);
+            opacity: 1;
+          }
+          &:after {
+            opacity: 1;
+            // filter: brightness(0.7);
+          }
+        }
+      }
+    }
+  }
+}

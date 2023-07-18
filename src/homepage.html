@@ -1,5 +1,5 @@
 <partial src="head.html" page="homepage" title="Homepage - Website"></partial>
-<section class="hero_banner" data-scroll-section data-scroll-section-inview>
+<section class="hero_banner" data-scroll-section data-scroll-section-inview id="top">
   <div class="container-fluid d-flex align-items-end h-100">
     <div class="banner_inner_wrap" data-scroll>
       <div class="row">
@@ -23,7 +23,7 @@
           </h1>
         </div>
         <div class="col-12 col-xl-4 d-flex align-items-center banner_desc">
-          <div class="banner_desc_wrap">
+          <div class="banner_desc_wrap" data-scroll data-scroll-speed="-1">
             <h3 data-scroll>Enhancing brands' digital presence by combining function and form.</h3>
             <a href="#" class="cta_btn" data-scroll>learn more</a>
           </div>
@@ -34,7 +34,7 @@
 </section>
 
 
-<section class="about_intro" data-scroll-section data-scroll-section-inview>
+<section class="about_intro" data-scroll-section data-scroll-section-inview id="about">
   <div class="container-fluid">
     <div class="row introduction">
       <div class="col-12 col-xl-8">
@@ -80,10 +80,10 @@
         <div class="history_section" data-scroll>
           <div class="image_row" data-scroll>
             <div class="image_wrap" data-scroll data-scroll-offset="300">
-              <img src="./uploads/home/a2.jpg" alt="">
+              <img src="./uploads/home/a1.jpg" alt="" data-scroll data-scroll-offset="500">
             </div>
             <div class="image_wrap" data-scroll data-scroll-offset="300">
-              <img src="./uploads/home/a1.jpg" alt="" data-scroll data-scroll-offset="500">
+              <img src="./uploads/home/qwe.jpg" alt="">
             </div>
           </div>
           <p>For the past 10 years, I've worked as an Art Director & Creative Director with some of the top talent,
@@ -98,7 +98,7 @@
   </div>
 </section>
 
-<section class="our_services" data-scroll-section>
+<section class="our_services" data-scroll-section id="services">
   <div class="container-fluid">
     <h2 class="title_primary" data-scroll>Our services</h2>
   </div>
@@ -139,7 +139,7 @@
     </div>
   </div>
 </section>
-<section class="branding_sliders_wrap" data-scroll-section>
+<section class="branding_sliders_wrap" data-scroll-section id="slider">
   <div class="scroll_slider forward" data-scroll>
     <div class="slideitem" data-scroll>
       <h4>branding</h4>
@@ -171,7 +171,7 @@
 </section>
 
 
-<section class="full_width_banner" data-scroll-section>
+<section class="full_width_banner" data-scroll-section >
   <div class="container-fluid">
     <div class="inner_wrap" style="background-image: url(./uploads/home/fwbg.jpg);" data-scroll>
       <div class="content_wrap" data-scroll>
@@ -198,19 +198,20 @@
   </div>
 </seection>
 
-<section class="our_works_section" data-scroll-section id="">
+
+<section class="our_works_section" data-scroll-section id="works">
   <div class="container-fluid">
     <!-- <div class="title_wrap" data-scroll data-scroll-sticky data-scroll-target="#portfolioscroller" data-scroll-offset="0%,85%"> -->
     <div class="title_wrap" data-scroll>
       <h2 class="title_primary" data-scroll>Our Works</h2>
-      <a href="#" class="cta_btn" data-scroll>See all our works</a>
+      <a href="our-works.html" class="cta_btn" data-scroll>See all works</a>
     </div>
   </div>
   <div class="container_wrapper" data-scroll id="portfolioscroller">
 
     <div class="our_work_scroller" data-scroll id="" data-scroll-sticky data-scroll-target="#portfolioscroller"
-      data-scroll-offset="0%,50%">
-      <div class="our_wok_slider_innerwrap" data-scroll data-scroll-speed="" data-scroll-direction="">
+      data-scroll-offset="-20%,30%">
+      <div class="our_wok_slider_innerwrap" data-scroll id="portfolio_slider">
         <a href="./uploads/home/w1.jpg" data-fancybox="portfolio" class="work_card" data-scroll>
           <img src="./uploads/home/w1.jpg" alt="">
           <div class="content_wrp">
@@ -271,7 +272,6 @@
   </div>
 </section>
 
-
 <section class="our_clients" data-scroll-section>
   <div class="container-fluid">
     <h2 class="title_primary" data-scroll>Our Clients</h2>
@@ -304,7 +304,7 @@
   </div>
 </section>
 
-<section class="contact_form_block" data-scroll-section>
+<section class="contact_form_block" data-scroll-section id="contact">
   <div class="container-fluid">
     <div class="row" data-scroll>
       <div class="col-12 col-xl-6">

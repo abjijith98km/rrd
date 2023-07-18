@@ -11,7 +11,9 @@ html {
     box-sizing: inherit;
   }
 }
-
+section{
+  // opacity: 1;
+}
 a,
 .btn {
   transition: 0.5s all ease-in-out;
@@ -20,6 +22,9 @@ a,
 body {
   background-color: $color-bg;
   font-family: $base-font-family;
+  user-select: none;
+  // width: 100vw;
+  // height: 100vh;
 }
 img {
   width: 100%;
@@ -89,6 +94,21 @@ address {
 }
 .container-fluid {
   padding: 0 60px;
+  @include below($mobile-lg) {
+    padding: 0 15px;
+  }
+}
+.c-scrollbar {
+  position: fixed;
+  height: 100vh;
+}
+.c-scrollbar_thumb {
+  background-color: rgba($color: $color-red, $alpha: 1);
+}
+[title="Toggle slideshow"],
+[title="Toggle thumbnails"],
+[title="Toggle zoom level"] {
+  display: none;
 }
 [data-load-container] {
   position: fixed;
@@ -112,6 +132,9 @@ address {
   // height: 100vh;
   // overflow: hidden;
   // transition: 0.35s all ease-in-out;
+  @include below($tablet-lg) {
+    position: static;
+  }
 }
 // .is-view {
 //   visibility: visible !important;
