@@ -169,7 +169,7 @@
     }
   }
   .about_us_block {
-    padding: 300px 0 200px;
+    padding: 300px 0 150px;
     position: relative;
     @include below($tablet-lg) {
       padding: 160px 0 130px;
@@ -790,7 +790,7 @@
             transform: translateY(80px);
           }
           h4 {
-            @include fontFace(40px, 1.2, 500, $color-white);
+            @include fontFace(30px, 1.2, 500, $color-white);
             text-transform: capitalize;
             margin-bottom: 15px;
             &::first-letter {
@@ -809,7 +809,7 @@
           ul {
             display: flex;
             li {
-              @include fontFace(16px, 1, 300, $color-white);
+              @include fontFace(13px, 1, 300, $color-white);
               text-transform: uppercase;
               position: relative;
               display: flex;
@@ -821,8 +821,8 @@
                 margin-left: 10px;
                 &::before {
                   content: "";
-                  width: 10px;
-                  height: 10px;
+                  width: 7px;
+                  height: 7px;
                   border-radius: 50%;
                   background-color: $color-white;
                   margin-right: 10px;
@@ -963,7 +963,7 @@
     padding-top: 90px;
   }
   h3 {
-    @include fontFace(130px, 1, 400, $color-white);
+    @include fontFace(120px, 1, 400, $color-white);
     margin-bottom: 30px;
     @include below($desktop-lg) {
       font-size: 100px;
@@ -980,7 +980,7 @@
     }
   }
   h4 {
-    @include fontFace(35px, 1.2, 300, $color-white);
+    @include fontFace(30px, 1.2, 300, $color-white);
     @include below($desktop-lg) {
       font-size: 30px;
     }
@@ -1028,6 +1028,8 @@
         input[type="submit"] {
           background-color: var(--feat-color);
           border-color: var(--feat-color);
+          text-transform: uppercase;
+          letter-spacing: 2px;
         }
       }
     }

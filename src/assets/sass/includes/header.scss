@@ -224,20 +224,27 @@ header {
   display: flex;
   align-items: flex-end;
   transition: 0.6s all ease-in-out;
+  @include below($tablet-lg) {
+    align-items: center;
+    justify-content: center;
+  }
   @include below($mobile-lg) {
     padding: 20px;
   }
   span {
-    @include fontFace(200px, 1, 600, transparent);
+    @include fontFace(160px, 1, 600, transparent);
     background-image: linear-gradient(to bottom, #9e9e9e, #111111);
     -webkit-background-clip: text;
     color: transparent;
     display: block;
+    @include below($tablet-lg) {
+      font-size: 100px;
+    }
     @include below($tablet-sm) {
-      font-size: 160px;
+      font-size: 80px;
     }
     @include below($mobile-lg) {
-      font-size: 80px;
+      font-size: 40px;
     }
   }
 }

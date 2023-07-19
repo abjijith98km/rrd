@@ -11,6 +11,16 @@
   h5 {
     @include fontFace(25px, 1.4, 300, $color-white);
     max-width: 60%;
+    @include below($tablet-lg) {
+      max-width: 80%;
+    }
+    @include below($tablet-sm) {
+      max-width: 90%;
+      font-size: 20px;
+    }
+    @include below($mobile-lg) {
+      max-width: 100%;
+    }
   }
   .our_works_row {
     margin-top: 70px;
@@ -55,9 +65,13 @@
         @include below($tablet-lg) {
           opacity: 1;
           transform: translateY(0);
+          font-size: 25px;
+        }
+        @include below($tablet-sm) {
+          font-size: 20px;
         }
         @include below($mobile-lg) {
-          font-size: 20px;
+          font-size: 18px;
         }
       }
       img {

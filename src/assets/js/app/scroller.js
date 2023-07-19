@@ -101,7 +101,7 @@ $(document).ready(function () {
       $(".hero_banner .banner_inner_wrap h1 .transform_wrap span").length > 0
     ) {
       gsap.to(".hero_banner .banner_inner_wrap h1 .transform_wrap span", {
-        y: -300,
+        y: -250,
         scrollTrigger: {
           trigger: ".hero_banner",
           start: "100% 97%",
