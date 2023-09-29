@@ -1,9 +1,10 @@
 .cta_btn {
-  @include fontFace(22px, 1.2, 500, $color-white);
+  @include fontFace(20px, 1.2, 500, $color-white);
   text-decoration: none;
   text-transform: uppercase;
   background-color: var(--feat-color);
-  padding: 6px 30px;
+  padding: 8px 30px;
+  border-radius: 10px;
   position: relative;
   display: block;
   width: max-content;

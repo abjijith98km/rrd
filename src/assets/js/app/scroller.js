@@ -1,3 +1,5 @@
+/** @format */
+
 gsap.registerPlugin(ScrollTrigger);
 $(document).ready(function () {
   if (window.screen.width > 1200) {
@@ -55,34 +57,64 @@ $(document).ready(function () {
       });
     }
     if ($(".full_width_banner .inner_wrap").length > 0) {
-      gsap.from(".full_width_banner .inner_wrap", {
-        backgroundSize: "200%",
-        scrollTrigger: {
-          trigger: ".full_width_banner .inner_wrap",
-          start: "0% 100%",
-          end: "100% 0%",
-          scroller: "[data-scroll-container]",
-          scrub: true,
-          // pin:true,
+      gsap.fromTo(
+        ".full_width_banner .inner_wrap",
+        {
+          backgroundPosition: "100% 100%",
+          // scrollTrigger: {
+          //   trigger: ".full_width_banner .inner_wrap",
+          //   start: "0% 100%",
+          //   end: "100% 0%",
+          //   scroller: "[data-scroll-container]",
+          //   scrub: true,
+          //   // pin:true,
+          // },
         },
-      });
+        {
+          backgroundPosition: "100% 0%",
+          scrollTrigger: {
+            trigger: ".full_width_banner .inner_wrap",
+            start: "0% 100%",
+            end: "100% 0%",
+            scroller: "[data-scroll-container]",
+            scrub: true,
+            // pin:true,
+          },
+        }
+      );
     }
     if (
       $(".about_intro .introduction .about_featured_image figure img").length >
       0
     ) {
-      gsap.to(".about_intro .introduction .about_featured_image figure img", {
-        scale: 1,
-        scrollTrigger: {
-          trigger:
-            ".about_intro .introduction .about_featured_image figure img",
-          start: "0% 100%",
-          end: "100% 0%",
-          scroller: "[data-scroll-container]",
-          scrub: true,
-          // pin:true,
+      gsap.fromTo(
+        ".about_intro .introduction .about_featured_image figure img",
+        {
+          objectPosition: "100% 100%",
+          // scale: 1,
+          // scrollTrigger: {
+          //   trigger:
+          //     ".about_intro .introduction .about_featured_image figure img",
+          //   start: "0% 100%",
+          //   end: "100% 0%",
+          //   scroller: "[data-scroll-container]",
+          //   scrub: true,
+          //   // pin:true,
+          // },
         },
-      });
+        {
+          objectPosition: "100% 0%",
+          scrollTrigger: {
+            trigger:
+              ".about_intro .introduction .about_featured_image figure img",
+            start: "0% 100%",
+            end: "100% 0%",
+            scroller: "[data-scroll-container]",
+            scrub: true,
+            // pin:true,
+          },
+        }
+      );
     }
     if ($(".service_card figure img").length > 0) {
       gsap.to(".service_card figure img", {
@@ -111,32 +143,32 @@ $(document).ready(function () {
         },
       });
     }
-    let cardsLength = $(
-        ".our_works_section .our_work_scroller .our_wok_slider_innerwrap .work_card"
-      ).length,
-      multiplier = 300;
-    let totalSCroll = cardsLength * multiplier;
-    if (
-      $(".our_works_section .our_work_scroller .our_wok_slider_innerwrap")
-        .length > 0
-    ) {
-      gsap.to(
-        ".our_works_section .our_work_scroller .our_wok_slider_innerwrap",
-        {
-          x: -totalSCroll,
-          scrollTrigger: {
-            trigger:
-              ".our_works_section .our_work_scroller .our_wok_slider_innerwrap",
-            start: "50% 50%",
-            // ease: Bounce.easeOut,
-            end: `+=${totalSCroll}`,
-            scroller: "[data-scroll-container]",
-            scrub: true,
-            // pin:true,
-          },
-        }
-      );
-    }
+    // let cardsLength = $(
+    //     ".our_works_section .our_work_scroller .our_wok_slider_innerwrap .work_card"
+    //   ).length,
+    //   multiplier = 300;
+    // let totalSCroll = cardsLength * multiplier;
+    // if (
+    //   $(".our_works_section .our_work_scroller .our_wok_slider_innerwrap")
+    //     .length > 0
+    // ) {
+    //   gsap.to(
+    //     ".our_works_section .our_work_scroller .our_wok_slider_innerwrap",
+    //     {
+    //       x: -totalSCroll,
+    //       scrollTrigger: {
+    //         trigger:
+    //           ".our_works_section .our_work_scroller .our_wok_slider_innerwrap",
+    //         start: "50% 50%",
+    //         // ease: Bounce.easeOut,
+    //         end: `+=${totalSCroll}`,
+    //         scroller: "[data-scroll-container]",
+    //         scrub: true,
+    //         // pin:true,
+    //       },
+    //     }
+    //   );
+    // }
 
     $('form input[type="submit"]').click(function () {
       setTimeout(() => {

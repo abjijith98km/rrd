@@ -110,17 +110,17 @@ $(document).ready(function () {
       useTransform: false,
     });
   }
-  if (window.screen.width > 1200) {
-    $(".our_works_section .container_wrapper").css({
-      "padding-bottom": `${
-        $(
-          ".our_works_section .our_work_scroller .our_wok_slider_innerwrap .work_card"
-        ).length *
-          300 +
-        "px"
-      }`,
-    });
-  }
+  // if (window.screen.width > 1200) {
+  //   $(".our_works_section .container_wrapper").css({
+  //     "padding-bottom": `${
+  //       $(
+  //         ".our_works_section .our_work_scroller .our_wok_slider_innerwrap .work_card"
+  //       ).length *
+  //         300 +
+  //       "px"
+  //     }`,
+  //   });
+  // }
 
   var count = 0;
   var innterval = setInterval(function () {
